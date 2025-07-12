@@ -5,11 +5,18 @@
 \contentsline {chapter}{\numberline {3}Zieldefinition}{3}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Technologieevaluation}{4}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Konkurrenzanalyse}{5}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Vorgehensmodelle}{6}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Durchführungsplanung}{7}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Ablaufplanung}{8}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Terminplanung}{9}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Kostenplanung}{10}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Qualitätssicherung}{11}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Risikomanagement}{12}{chapter.12}%
+\contentsline {chapter}{\numberline {6}Produktplanung}{6}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Zielsetzung und Systemverständnis}{6}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Strukturierte Produktplanung}{6}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Produktstrukturplan (PBS)}{6}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Artefaktstrukturplan (ABS)}{7}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Arbeitsstrukturplan (WBS)}{8}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Konsistenzprüfung}{9}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Vorgehensmodelle}{10}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Durchführungsplanung}{11}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Ablaufplanung}{12}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Terminplanung}{13}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Kostenplanung}{14}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Qualitätssicherung}{15}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Risikomanagement}{16}{chapter.13}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
