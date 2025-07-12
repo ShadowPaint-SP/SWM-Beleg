@@ -112,8 +112,12 @@ hyperfootnotes=false
 %\setlength{\intextsep}{5pt plus 2pt minus 2pt}
 
 %\renewcommand\thesection{\arabic{section}} % Makes sections x istead of x.x
-
 \begin{document}
+
+\RedeclareSectionCommand[
+  beforeskip=0ex, % Abstand vor \chapter
+  afterskip=0.5ex plus .2ex              % Abstand nach \chapter
+]{chapter}
 \frontmatter
 \pagenumbering{Roman} 				% needed to capitalize the roman page numbering
 \input{frontmatter/1_title}	
