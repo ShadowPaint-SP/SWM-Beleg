@@ -1,3 +1,87 @@
 \setcounter{chapter}{0} % sets the number of this chapter to 0
-\chapter{Stakeholder Interviews}
+
+\chapter{Einleitung}
+\label{sec:einleitung}
+Die zunehmende Digitalisierung im Gesundheitswesen eröffnet vielfältige Möglichkeiten zur Effizienzsteigerung, besseren Informationsbereitstellung und verbesserten Patientenversorgung. In medizinischen Einrichtungen ist jedoch häufig eine heterogene IT-Landschaft vorzufinden, in der Dokumente aus verschiedenen Quellen unstrukturiert abgelegt werden. Daraus resultieren Probleme bei der Informationssuche, Prozessineffizienzen sowie eine eingeschränkte Nachnutzung der Dokumentation. Ziel dieses Projekts ist die Planung eines Entity-Recognition- und -Retrieval-Systems (ER-System) zur Strukturierung und Auffindung medizinischer Informationen in Dokumentensystemen. Der Fokus liegt auf der Integration bestehender Systeme, der Reduktion manueller Suchvorgänge sowie der Einhaltung datenschutzrechtlicher Anforderungen.
+
+{\let\clearpage\relax
+\chapter{Stakeholder Interviews}}
 \label{sec:stakeholder_interviews}
+\section{Vorgehensweise und Zielstellung}
+Im Rahmen der Projektplanung wurde eine umfassende Stakeholderanalyse durchgeführt, um die Anforderungen zentraler Interessensgruppen an das geplante Entity-Recognition- und Retrieval-System für medizinische Dokumentensysteme zu identifizieren. Ziel war es, sowohl funktionale als auch nicht-funktionale Anforderungen zu erfassen und dabei die unterschiedlichen Perspektiven aus klinischem Betrieb, technischer Umsetzung und regulatorischem Rahmen zu berücksichtigen.
+Die Analyse erfolgte anhand von zwei Interviews mit zentralen Stakeholdergruppen:
+\begin{itemize}
+	\item Interview 1: mit medizinischem Fachpersonal (Arzt) und Klinikdirektion
+	\item Interview 2: mit dem IT-Spezialisten sowie dem Datenschutzbeauftragten der Klinik
+\end{itemize}
+Die Interviews wurden qualitativ ausgewertet und entlang thematischer Schwerpunkte kategorisiert. Die Ergebnisse flossen direkt in die Anforderungsdefinition und die weitere Projektstrukturierung ein.
+\section{Ergebnisse Interview 1: Medizinisches Personal und Klinikdirektion}
+\underline{Aktueller Stand und Herausforderungen}
+Das medizinische Personal arbeitet täglich mit einer Vielzahl von Dokumenten (z.B. Befunde, Arztbriefe, Laborberichte). Die Informationssuche erfolgt bislang über verschiedene Teilsysteme ohne zentrale Schnittstelle. Dies führt zu ineffizienten Prozessen mit hohem Zeitaufwand (5–20 Klicks pro Abfrage, ca. 100 Zugriffe täglich). Die fragmentierte Systemlandschaft erschwert eine schnelle, kontextbezogene Entscheidungsfindung.
+\underline{Anforderungen und Wünsche}
+Zentrale Anforderungen sind:
+\begin{itemize}
+	\item ein kontextsensitives Such- und Dashboardsystem zur automatisierten Darstellung relevanter Informationen
+	\item Single Sign-On über alle Subsysteme hinweg
+	\item ein modulares, barrierefreies UI mit Unterstützung für Sprachsteuerung
+	\item nutzerrollenspezifische Zugriffskonzepte
+	\item eine Antwortzeit von unter 3 Sekunden für Standardabfragen
+	\item personalisiertes Dashboard mit Speicherung individueller Präferenzen
+\end{itemize}
+Die Klinikdirektion betont darüber hinaus:
+\begin{itemize}
+	\item die Effizienzsteigerung als übergeordnetes Ziel zur Entlastung von Personalressourcen
+	\item die Einhaltung gesetzlicher Datenschutz- und Interoperabilitätsanforderungen
+	\item die Skalierbarkeit des Systems für den klinikweiten Einsatz
+	\item die Notwendigkeit frühzeitig testbarer Prototypen und medienwirksamer Präsentationen nach ca. 1,5 Jahren Projektlaufzeit
+\end{itemize}
+Die Projektumsetzung soll in einem modularen Rollout erfolgen, beginnend mit einem Pilotbetrieb auf einer Station (ca. 100 Patienten).
+\section{Ergebnisse Interview 2: IT-Spezialist und Datenschutzbeauftragter}
+\underline{Aktueller Stand und Technische Rahmenbedingungen}
+Die bestehende IT-Landschaft besteht aus über 40 teilweise proprietären Subsystemen (zentrale Systeme, Sonderanwendungen, Verwaltungswerkzeuge), die auf virtualisierten Maschinen in einem eigenen Rechenzentrum betrieben werden. Es existiert ein ausfallsicheres Backup-System mit redundanter Infrastruktur. Die Nutzung externer Cloud-Services ist untersagt. HL7 und FHIR werden als zentrale Schnittstellenstandards anerkannt.
+Der Datenschutzbeauftragte betont die Einhaltung der DSGVO, insbesondere im Hinblick auf Zweckbindung, Datenminimierung und Zugriffsbeschränkung.
+\underline{Anforderungen und Wünsche}\\
+\underline{Datenschutz und Sicherheit}
+\begin{itemize}
+	\item Pseudonymisierung und Verschlüsselung sensibler Daten
+	\item keine lokale Speicherung personenbezogener Daten auf mobilen Endgeräten
+	\item differenzierte Rechtevergabe nach Nutzerrolle (RBAC)
+	\item Zwei-Faktor-Authentifizierung (z.B. via TOTP-App)
+	\item umfassende Auditierung aller Zugriffe und Aktionen
+	\item ausschließliche Verarbeitung innerhalb des geschützten Intranets
+	\item Nutzung ausschließlich synthetischer oder pseudonymisierter Snapshots für Tests und Entwicklung
+	\item Kein Zugriff auf Live-Daten ohne gesonderte Genehmigung durch ein Datenschutzgremium
+\end{itemize}
+\underline{Systemintegration und Infrastruktur}
+\begin{itemize}
+	\item Containerisierter Betrieb (Docker, Kubernetes)
+	\item Microservice-Architektur für flexible Skalierbarkeit
+	\item Integration in bestehende IT-Umgebung mit abgestimmten Datenformaten und Übergabeprozessen
+	\item Kein Caching aufgrund alter Bestandssysteme
+	\item Segmentierte Netzwerke, Zugriff IP-basiert
+\end{itemize}
+\underline{Wartung und Support}
+\begin{itemize}
+	\item Wartung durch interne IT, mit Unterstützung durch externe Partner bei Entwicklung und Updates (jedoch ohne direkten Infrastrukturzugriff),
+	\item dedizierte Update-Fenster (z.B. mittwochs) und ein internes Ticket-System für Fehlerbehandlung,
+	\item Entwicklung auf einem separaten, virtuellen Testsystem zur Sicherung des laufenden Betriebs.
+\end{itemize}
+\underline{Leistungsanforderungen und Skalierung}
+\begin{itemize}
+	\item Unterstützung von bis zu 50 parallelen Nutzern im Pilotbetrieb, langfristig mehreren Hundert
+	\item Antwortzeiten < 3 Sekunden für Standardabfragen
+	\item Komplexe Analysen mit akzeptierten Antwortzeiten von wenigen Minuten
+	\item Nutzung von Hochleistungssystemen mit dedizierten GPUs
+	\item Absicherung kritischer Engpässe durch priorisierte Hardware-Ressourcen
+\end{itemize}
+\underline{Zeitrahmen}
+\begin{itemize}
+	\item Projektlaufzeit: 3 Jahre
+	\item Nachweis funktionaler Prototypen innerhalb von 1,5 Jahren
+	\item Abnahmetest: 3-monatige störungsfreie Betriebsphase zum Projektende
+\end{itemize}
+\section{Bewertung und Nutzen für das Projekt}
+Die Stakeholderinterviews ermöglichten ein tiefes Verständnis der bestehenden Schwachstellen, Prioritäten und Erwartungen. Die Kombination aus medizinischer, technischer und datenschutzrechtlicher Perspektive erlaubt eine differenzierte Anforderungsanalyse.
+Die Projektplanung profitiert von einem klar definierten Zielbild eines kontextsensitiven, modularen Systems, das eine nutzerspezifische Anpassbarkeit ermöglicht. Die technische und regulatorische Machbarkeit kann frühzeitig validiert werden, beispielsweise durch den Einsatz synthetischer Daten und die Nutzung der bestehenden internen Infrastruktur. Durch den Abgleich der Anforderungen mit den verfügbaren Ressourcen entsteht eine realistische Roadmap für die Umsetzung. Zudem wird die Kommunikation und Einbindung der Stakeholdergruppen verbessert, etwa durch den Einsatz agiler Sprints, klar definierter Meilensteine und regelmäßiger Abstimmungsgremien. Schließlich werden kritische Erfolgsfaktoren wie Benutzerfreundlichkeit, Datenschutzkonformität und das Antwortzeitverhalten frühzeitig identifiziert und in die Planung integriert.
+
+

@@ -1,20 +1,21 @@
 \documentclass[
 	paper = a4,
-	BCOR=5mm, 			% BCOR je nach Seitenzahl setzen
-%	ngerman, english,	% Give every language used in the document, the main one as last
+	10pt,
 	english, ngerman,
 	oneside,
 	numbers=noenddot,
-	parskip	= half, 	% separate paragraphs with half a line
+	%parskip	= half, 	% separate paragraphs with half a line
 	cdgeometry = symmetric,
 	cd = barcolor,
-	chapterpage	= false,
+	%chapterpage	= false,
 	cdmath = false,
-	slantedgreek=standard,
-	captions=tableheading
+	%slantedgreek=standard,
+	captions=tableheading,
+	chapteratlists=entry,
+	headings=small,
+	openany
 ]{tudscrbook}
 
-\usepackage{tudscrsupervisor} % script for creatiing the task description
 \usepackage{tudscrcolor}
 
 \usepackage[utf8]{inputenc}
@@ -111,17 +112,18 @@ hyperfootnotes=false
 %\setlength{\textfloatsep}{15pt plus 2pt minus 2pt}
 %\setlength{\intextsep}{5pt plus 2pt minus 2pt}
 
-%\renewcommand\thesection{\arabic{section}} % Makes sections x istead of x.x
 \begin{document}
 
 \RedeclareSectionCommand[
-  beforeskip=0ex, % Abstand vor \chapter
-  afterskip=0.5ex plus .2ex              % Abstand nach \chapter
+  beforeskip=0ex,
+  afterskip=0.5ex plus .2ex            
 ]{chapter}
+
 \frontmatter
 \pagenumbering{Roman} 				% needed to capitalize the roman page numbering
 \input{frontmatter/1_title}	
 \tableofcontents
+\clearpage
 
 \mainmatter
 \input{mainmatter/1_Stakeholder_Interviews}
@@ -129,15 +131,11 @@ hyperfootnotes=false
 \input{mainmatter/3_Zieldefinition}
 \input{mainmatter/4_Technologieevaluation}
 \input{mainmatter/5_Konkurrenzanalyse}
-\input{mainmatter/6_Produktplanung}
-\input{mainmatter/6_Vorgehensmodelle}
-\input{mainmatter/7_Durchführungsplanung}
+\input{mainmatter/6_Ablauforganisation}
+\input{mainmatter/7_Produktplanung}
 \input{mainmatter/8_Ablaufplanung}
-\input{mainmatter/9_Terminplanung}
-\input{mainmatter/10_Kostenplanung}
-\input{mainmatter/11_Qualitätssicherung}
-\input{mainmatter/12_Risikomanagement}
-
-\listoffigures
+\input{mainmatter/9_Terminplanung.tex}
+\input{mainmatter/10_Kostenplanung.tex}
+\input{mainmatter/11_Durchführungsplanung.tex}
 
 \end{document}

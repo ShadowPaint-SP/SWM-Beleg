@@ -1,2 +1,119 @@
-\chapter{Zieldefinition}
+{\let\clearpage\relax
+\chapter{Zieldefinition}}
 \label{sec:zieldefinition}
+\section{Projektziel}
+
+Ziel des Projekts ist die Entwicklung einer integrierten Intranet-Plattform zur intelligenten Suche, Kontextanalyse und Visualisierung medizinischer Dokumente und Patienteninformationen. Das geplante System soll verschiedene Subsysteme (KIS, Labor, Medikation, Entlassungsberichte, PDF-Dokumente) semantisch zusammenführen und durch KI-basierte Methoden wie Natural Language Processing (NLP), Transfer Learning und LLMs klinische Entitäten automatisch extrahieren und strukturieren.
+Ein personalisiertes Dashboard, eine kontextbasierte Darstellung sowie ein KI-gestützter Assistent sollen den Arbeitsalltag des medizinischen Personals signifikant erleichtern, die Qualität der Datennutzung erhöhen und zur Digitalisierung der klinischen Dokumentation beitragen – unter Einhaltung höchster Datenschutz- und Sicherheitsstandards.
+\section{Geschäftsziele}
+
+\begin{center}
+\begin{tabular}{|p{5cm}|p{10cm}|}
+	\hline
+	\textbf{Ziel} & \textbf{Beschreibung} \\
+	\hline
+	Digitalisierung und Reduktion von Papieraufwand & Nachhaltige Digitalisierung der Dokumentationsprozesse zur Reduktion physischer Archivflächen und Druckkosten. \\
+	\hline
+	Zukunftssicherheit & Technische und funktionale Skalierbarkeit hinsichtlich Nutzerzahlen, Endgeräte und neuer Datenquellen. \\
+	\hline
+	Sehr hohe Verfügbarkeit und Ausfallsicherheit & Sicherstellung der Verfügbarkeit auch im Notfall durch redundante Infrastruktur und Ausfallsicherung. \\
+	\hline
+	Benutzerfreundlichkeit & Klare, konsistente und barrierefreie Oberfläche zur Reduktion der kognitiven Last und Erhöhung der Akzeptanz. \\
+	\hline
+	Zuverlässige und kontextgerechte Darstellung & Automatisierte Selektion und Visualisierung relevanter Informationen pro Fall. \\
+	\hline
+	Budgetrahmen und Zeitplan & Einhaltung des Budgets von maximal 500.000€ bei einer Projektlaufzeit von drei Jahren, medienwirksamer Prototyp nach 12–18 Monaten. \\
+	\hline
+	Gesetzliche Konformität & Einhaltung gesetzlicher Aufbewahrungsfristen (10 Jahre), MDR, DSGVO, BSI TR-03161 und Barrierefreiheitsstandards. \\
+	\hline
+\end{tabular}
+\end{center}
+
+
+
+\section{Operative Ziele}
+\begin{center}
+\begin{tabular}{|p{5cm}|p{10cm}|}
+	\hline
+	\textbf{Ziel} & \textbf{Beschreibung} \\
+	\hline
+	Pilotprojekt auf einer Station & Durchführung eines Piloten mit 50 Nutzern und 100 Patienten zur Evaluation im Echtbetrieb. \\
+	\hline
+	Antwortzeiten unter 3 Sekunden & Schnelle Entscheidungsprozesse durch kurze Antwortzeiten bei Standardabfragen. \\
+	\hline
+	Weniger als 10 Klicks pro Informationsabruf & Deutliche Reduktion der Interaktionslast im Vergleich zum Ist-Zustand. \\
+	\hline
+	Zentraler Login mit Langzeit-Authentifizierung & Single Sign-On (SSO) mit Zwei-Faktor-Authentifizierung zur Erhöhung von Sicherheit und Benutzerfreundlichkeit. \\
+	\hline
+	Interne Datenverarbeitung & Ausschließliche Verarbeitung im gesicherten Intranet, kein Cloudzugriff oder Datenexport. \\
+	\hline
+	Kompatibilität mit Bestandssystemen & Ergänzung bestehender KIS-Komponenten ohne deren vollständige Ablösung. \\
+	\hline
+\end{tabular}
+\end{center}
+
+
+\section{Stakeholderziele}
+\begin{center}
+\begin{tabular}{|p{4cm}|p{5cm}|p{6cm}|}
+	\hline
+	\textbf{Stakeholder} & \textbf{Ziel} & \textbf{Beschreibung} \\
+	\hline
+	Medizinisches Personal & Zeitersparnis und Effizienz & Reduzierte Klicks, zentrale Suche und kontextbezogene Darstellung ermöglichen eine spürbare Zeitersparnis. \\
+	
+	& Intuitive Bedienung & Bedienbarkeit ohne umfassende Schulungen, anpassbare Dashboards entsprechend individueller Arbeitsstile. \\
+	
+	& Sprachsteuerung & Sprachbasierte Interaktion für hygienisch sensible Situationen, z.B. bei Visiten oder Operationen. \\
+	
+	& KI-gestützte Unterstützung & Ad-hoc-Suche in natürlicher Sprache, semantische Abfragen und Anomalieerkennung zur Unterstützung medizinischer Entscheidungen. \\
+	\hline
+	Klinikdirektion & Hohe Verfügbarkeit und Sicherheit & Ausfallsicherheit, Rechtemanagement mit Zwei-Faktor-Authentifizierung und differenzierter Rollensteuerung. \\
+	
+	 & Backup und Kostenkontrolle & Nutzung der vorhandenen Serverarchitektur für Backup und Recovery, Kostenkontrolle durch Meilensteine und Evaluationsphasen. \\
+	
+	 & Langfristige Skalierbarkeit & Sicherstellung von Skalierbarkeit und Wartbarkeit für den Klinikbetrieb. \\
+	\hline
+\end{tabular}
+\end{center}
+
+
+\section{Ergebnisziele}
+\begin{center}
+\begin{tabular}{|p{5cm}|p{10cm}|}
+	\hline
+	\textbf{Ergebnisziel} & \textbf{Messkriterium} \\
+	\hline
+	Antwortzeiten & Standardabfragen unter 3 Sekunden \\
+	\hline
+	Interaktionen pro Suche & Weniger als 10 Interaktionen \\
+	\hline
+	Zeitersparnis & Mindestens 30\% im Klinikalltag \\
+	\hline
+	Nutzerzufriedenheit & Mindestens 75\% positives Feedback im Pilottest \\
+	\hline
+	Prototyp und Pilot & Funktionaler Prototyp nach 6 Monaten, Pilotbetrieb nach spätestens 12 Monaten \\
+	\hline
+\end{tabular}
+\end{center}
+
+
+\section{Nicht-Ziele}
+\begin{center}
+	\begin{tabular}{|p{5cm}|p{10cm}|}
+		\hline
+		\textbf{Was nicht erreicht werden soll} & \textbf{Begründung} \\
+		\hline
+		Vollständiger Ersatz des KIS & Das bestehende KIS bleibt Hauptsystem für Patientenstammdaten und Behandlungsdokumentation. \\
+		\hline
+		Mobile Speicherung personenbezogener Daten & Schutz vor Datenverlust bei Geräteverlust. \\
+		\hline
+		Integration externer Mandanten im Pilotbetrieb & Fokussierung auf interne Pilotstation. \\
+		\hline
+		Komplette Neugestaltung der UI & Wahrung der Vertrautheit und Akzeptanz der Nutzer. \\
+		\hline
+		Automatisierte Entscheidungsfindung & Das System unterstützt, ersetzt aber keine klinische Verantwortung. \\
+		\hline
+		Autorisierte Löschung kritischer Daten & Vermeidung von Sicherheits- und Compliance-Risiken. \\
+		\hline
+	\end{tabular}
+\end{center}

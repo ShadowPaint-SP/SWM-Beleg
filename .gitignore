@@ -1,5 +1,4 @@
 /.DS_Store
-doku.*
-!doku.tex
-!doku.toc
-!doku.pdf
+Beleg.*
+!Beleg.tex
+!Beleg.pdf
