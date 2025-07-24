@@ -1,2 +1,31 @@
 \chapter{Qualitätssicherung}
 \label{sec:qualitaetssicherung}
+\section{Produkt- und Prozessqualität}
+
+Die Qualität des Softwareprodukts wird entlang mehrerer Dimensionen bewertet. Eine zentrale Rolle spielt die funktionale Eignung, das heißt, die Software muss alle spezifizierten Anforderungen vollständig und korrekt erfüllen. Hinzu kommt die Leistungseffizienz, die sich durch schnelle Antwortzeiten und einen geringen Ressourcenverbrauch auszeichnet. Auch Benutzerfreundlichkeit und Barrierefreiheit sind wichtige Kriterien: Die Anwendung soll intuitiv und auch unter Zeitdruck leicht bedienbar sein und allen Nutzergruppen den Zugang ermöglichen. Ein weiterer Aspekt ist die Zuverlässigkeit und Sicherheit. Die Software muss hochverfügbar sein, dem Datenschutz gemäß DSGVO genügen und gegen unbefugte Manipulationen geschützt sein. Schließlich ist auch die Wartbarkeit und Übertragbarkeit von Bedeutung: Die Lösung soll modular aufgebaut sein und sich unkompliziert an neue Umgebungen oder Anforderungen anpassen lassen.
+
+Neben dem Produkt wird auch der Entwicklungsprozess nach Qualitätsmaßstäben gestaltet. Wichtige Merkmale sind hier die Zuverlässigkeit und Wiederholbarkeit der Abläufe, was durch definierte Prozesse und Standards erreicht wird. Transparenz wird durch eine durchgängige Dokumentation sichergestellt, während eine effiziente Ressourcenplanung Zeit und Budget im Blick behält. Die Entwicklung wird zudem auf Nachhaltigkeit und Anpassbarkeit ausgelegt, um auf neue Anforderungen flexibel reagieren zu können. Schließlich sorgen Messbarkeitskriterien wie Testabdeckung und Fehlerraten für objektive Rückmeldung zur Prozessqualität.
+
+\section{Konstruktive Maßnahmen}
+
+Die konstruktive Qualitätssicherung hat das Ziel, Fehler möglichst schon im Vorfeld zu vermeiden. Hierzu werden sowohl technische als auch organisatorische Maßnahmen eingesetzt.
+
+Zu den technischen Maßnahmen zählen ein strukturiertes Anforderungsmanagement mithilfe von Tools wie Jira oder Confluence sowie die Entwicklung von Prototypen, insbesondere für die grafische Benutzeroberfläche oder KI-Komponenten. Der Einsatz typisierter Programmiersprachen wie Java oder TypeScript trägt zur Vermeidung typbezogener Fehler bei. Zusätzlich kommen modellgetriebene Methoden wie UML oder BPMN zum Einsatz, um die Systemstruktur und Abläufe frühzeitig zu veranschaulichen. Tools wie SonarQube zur statischen Codeanalyse und Jenkins für die Testautomatisierung helfen dabei, technische Fehler frühzeitig zu erkennen und systematisch auszuräumen.
+
+Auf organisatorischer Ebene werden Dokumentationsstandards und Review-Checklisten etabliert, um die Nachvollziehbarkeit und Qualität der Ergebnisse zu sichern. Es gelten klare Richtlinien für Clean Code und Sicherheitsstandards, die allen Projektmitgliedern bekannt und verbindlich sind. Eine transparente Aufbauorganisation mit klar definierten Rollen sorgt für Verantwortungsbewusstsein und Übersicht. Zudem werden Barrierefreiheitsrichtlinien wie BITV oder EN 301549 beachtet, um die Software inklusiv zu gestalten. Die Einhaltung von Normen und Standards wie ISO 9001 sowie DSGVO- und MDR-Compliance wird ebenfalls angestrebt.
+
+\section{Analytische Maßnahmen}
+
+Die analytische Qualitätssicherung dient der systematischen Überprüfung fertiger Softwareartefakte. Dabei kommen sowohl analysierende als auch testende Verfahren zum Einsatz.
+
+Zu den analysierenden Verfahren zählen die statische Codeanalyse, bei der beispielsweise nach totem Code oder Typfehlern gesucht wird. Regelmäßige Code-Reviews, idealerweise im Vier-Augen-Prinzip, tragen zur Verbesserung der Codequalität bei. Ergänzt wird dies durch die Erhebung technischer Metriken, etwa zur zyklomatischen Komplexität oder zur Kopplung einzelner Module.
+
+Im Bereich der testenden Verfahren werden verschiedene Testansätze verfolgt: Black-Box-Tests prüfen die Funktionalität aus Sicht der Anwender, während White-Box-Tests die interne Programmlogik kontrollieren. Für kritische Datenverarbeitung, etwa im medizinischen Bereich, kommen datenbasierte Tests mit synthetischen Patientendaten zum Einsatz. Außerdem werden regelmäßig Regressionstests durchgeführt, um sicherzustellen, dass neue Änderungen keine bestehenden Funktionen beeinträchtigen. Diese Tests sind in eine automatisierte CI/CD-Pipeline eingebunden. Zusätzlich werden Review-Prozesse implementiert, bei denen medizinisches Fachpersonal eingebunden ist, um die fachspezifische Korrektheit der Lösung zu überprüfen.
+
+\section{Integration in den Entwicklungsprozess}
+
+Qualitätssicherung ist kein nachgelagerter Schritt, sondern ein kontinuierlicher Bestandteil des gesamten Entwicklungsprozesses. Bereits ab der Anforderungsphase werden geeignete Maßnahmen zur Qualitätssicherung eingeplant. Änderungen am System werden konsequent dokumentiert und durch Review-Prozesse geprüft. Die kontinuierliche Integration und Bereitstellung (CI/CD) ermöglicht automatisierte Tests bei jedem Build. Darüber hinaus werden zentrale Qualitätskennzahlen wie Testabdeckung und Fehlerraten laufend erfasst und überwacht, um eine kontinuierliche Verbesserung zu ermöglichen.
+
+\section{Auswirkungen auf Zeit- und Kostenplanung}
+
+Die umfassende Qualitätssicherung führt zunächst zu einem erhöhten Entwicklungsaufwand. Insbesondere müssen zwei Mitarbeitende über einen Zeitraum von 134 Wochen zusätzlich beschäftigt werden, was zu Mehrkosten von 273.150€ führt (2 Personen × 134 Wochen × 1.019€/Woche). Weitere Ausgaben für notwendige Ausstattung wie Laptops oder Softwarelizenzen wurden bereits im Budget eingeplant. Dieser anfängliche Mehraufwand zahlt sich jedoch langfristig aus: Durch die frühzeitige Fehlervermeidung lassen sich Ressourcen einsparen, Nacharbeiten reduzieren und Projektrisiken deutlich senken.

@@ -1,2 +1,61 @@
 \chapter{Risikomanagement}
 \label{sec:risikomanagement}
+
+\section{ Risikoplanung}
+Ziel der Risikoplanung ist es, potenzielle Gefahrenquellen im Projektverlauf frühzeitig zu erkennen, zu bewerten und geeignete Maßnahmen zur Risikovermeidung oder -Minderung zu definieren. Im Kontext unseres medizinischen Entity-Recognition-Systems sind insbesondere Qualität, Datenschutz, technische Integrität und Projektdurchlaufzeit zentrale Risikofaktoren, da sie direkte Auswirkungen auf Patientensicherheit, Klinikprozesse und regulatorische Vorhaben haben.
+\section{Vorgehen}
+Die Risikoplanung besteht nach ISO 31000 auf den folgenden Schritten:
+\begin{enumerate}
+	\item Identifikation potenzieller Risiken
+	\item Kategorisierung und Bewertung nach Eintrittswahrscheinlichkeit und Schadenshöhe
+	\item Ableitung geeigneter Gegenmaßnahmen
+	\item Integration der Maßnahmen in die Projektplanung
+	\item Laufende Überprüfung und Anpassung im Projektverlauf
+\end{enumerate}
+\section{Identifizierte Risiken und Bewertung}
+\begin{center}
+	\begin{tabular}{|p{4.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{3cm}|}
+		\hline
+		\textbf{Risiko} & \textbf{Eintritts- wahrscheinlichkeit} & \textbf{Schadens- ausmaß} & \textbf{Risikowert} & \textbf{Kategorie} \\
+		\hline
+		Verzögerung durch schlechte Datenqualität & Mittel & Hoch & Hoch & Datenmanagement \\
+		\hline
+		Unklare Anforderungen / Scope Creep & Hoch & Mittel & Hoch & Projektsteuerung \\
+		\hline
+		Ausfall von Schlüsselpersonen (Krankheit, Kündigung) & Mittel & Hoch & Hoch & Personalrisiko \\
+		\hline
+		Technologische Inkompatibilität (z.B. KI-Modelle <-> KIS-Systeme) & Niedrig & Hoch & Mittel & Technikrisiko \\
+		\hline
+		Sicherheitslücke / DSGVO-Verstoß bei Zugriffskontrolle & Niedrig bis Mittel & Sehr hoch & Hoch & Recht / Security \\
+		\hline
+		Unterfinanzierung durch falsch kalkulierte Betriebskosten & Niedrig & Hoch & Mittel & Finanzen \\
+		\hline
+		Zeitliche Engpässe in Test- und Abnahmephasen & Mittel & Mittel & Mittel & Qualität / Prozess \\
+		\hline
+	\end{tabular}
+\end{center}
+\section{Gegenmaßnahmen}
+\begin{center}
+	\begin{tabular}{|p{7cm}|p{9cm}|}
+		\hline
+		\textbf{Risiko} & \textbf{Geplante Gegenmaßnahme} \\
+		\hline
+		Schlechte Datenqualität & Validierung durch ETL-Tools, frühe Tests mit Musterdaten \\
+		\hline
+		Scope Creep / Anforderungsunsicherheit & Agile Methode mit Backlog-Pflege und Change Requests \\
+		\hline
+		Ausfall Schlüsselpersonen & Vertretungsregelung, Wissensdokumentation, Pair Programming \\
+		\hline
+		Inkompatible Technologien & Frühzeitige Prototypen, Schnittstellentests \\
+		\hline
+		DSGVO-Verstoß / Sicherheitslücke & Security-Audits, Datenschutzschulungen, automatisierte Tests \\
+		\hline
+		Falsche Kostenannahmen & Monatliche Kostenüberwachung, Kostenpuffer \\
+		\hline
+		Zeitengpässe in QS & QS kontinuierlich im Sprint, nicht nur zum Projektende \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\newpage
+\newpage
