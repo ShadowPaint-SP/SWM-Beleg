@@ -3,11 +3,39 @@
 \label{sec:technologieevaluation}
 6 Technologieevaluation und Konkurrenzanalyse
 \section{Ziel und Vorgehen}
-Ziel dieses Arbeitspakets war es, den aktuellen Stand der Technologieentwicklung im Bereich medizinischer Dokumentenverarbeitung zu analysieren, geeignete technische Komponenten für die geplante Entity-Recognition- und Retrieval-Plattform auszuwählen und die Lösung strategisch gegenüber bestehenden Markt- und Speziallösungen zu positionieren.\\
-\underline{Das Vorgehen erfolgte in vier Schritten:}
-\begin{enumerate}
-	\item \textbf{Anforderungsdefinition:} Ableitung funktionaler und nicht-funktionaler Anforderungen aus Stakeholderinterviews und den Projektzielen (z.B. HL7/FHIR-Unterstützung, kontextsensitive Suche, Barrierefreiheit, Datenschutz)
-	\item \textbf{Marktanalyse (State of the Art):} Untersuchung bestehender Systeme in den Bereichen Datenvirtualisierung, Business Intelligence (BI) und medizinische Visualisierung
-	\item \textbf{Technologieevaluation:} Bewertung geeigneter Technologien mittels Scoring-Modell nach Funktionsumfang, Standardkonformität, Integrationsfähigkeit, Stabilität, Community-Support und Eignung für den klinischen Kontext
-	\item \textbf{Konkurrenzanalyse:} Vergleich mit führenden Marktakteuren anhand eines Kiviat-Diagramms und einer SWOT-Analyse zur strategischen Positionierung
-\end{enumerate}
+Ziel war die Auswahl geeigneter technischer Komponenten für eine Entity-Recognition- und Retrieval-Plattform sowie deren strategische Positionierung gegenüber bestehenden Markt- und Speziallösungen. Grundlage waren die aus den Stakeholderinterviews abgeleiteten Anforderungen (u.a. HL7-/FHIR-Unterstützung, kontextsensitive Suche, Barrierefreiheit, Datenschutz).
+Das Vorgehen umfasste eine Marktanalyse, die Bewertung der Technologien mittels Scoring-Modell (Funktionalität, Standardkonformität, Integrationsfähigkeit, Stabilität, klinische Eignung) und einen Vergleich mit führenden Marktakteuren.
+\section{Evaluation der Teillösungen}
+\subsection{Datenvirtualisierung}
+Die Datenvirtualisierung stellt die Grundlage für die Integration der stark segmentierten Systemlandschaft dar. Vier Lösungen wurden analysiert:
+\begin{itemize}
+	\item Dremio bietet SQL-basierte Abfragen und zahlreiche Konnektoren, richtet sich jedoch primär an Geschäfts- und Verwaltungsdaten und ist nicht auf den Gesundheitsbereich spezialisiert.
+	\item CData Driver Technologies überzeugt durch die größte Zahl an Integrationen und eine FHIR-Anbindung, bleibt jedoch generisch ohne spezifische Sicherheitsfeatures für klinische Daten.
+	\item TIBCO Data Virtualization, als „Leader“ im GigaOm Radar ausgezeichnet, unterstützt zahlreiche Standards, einschließlich HL7 und FHIR, ist jedoch nicht primär auf den Gesundheitssektor ausgerichtet.
+	\item Infor Cloverleaf wurde speziell für das Gesundheitswesen entwickelt, unterstützt Standards wie DICOM, CDA, X12 und FHIR und erfüllt branchenspezifische Sicherheitsanforderungen (HIPAA, ISO 27001). Zudem ist Cloverleaf für die Kommunikation zwischen verschiedenen Gesundheitseinrichtungen ausgelegt.
+\end{itemize}
+Mit \textbf{46 von 48 Punkten} erhielt Infor Cloverleaf die höchste Bewertung und wurde als bevorzugte Lösung empfohlen.
+
+\subsection{Business-Intelligence-Systeme}
+Für die kontextbasierte Analyse und Visualisierung der Daten wurden BI-Tools bewertet:
+\begin{itemize}
+	\item \textbf{Microsoft Power BI} und \textbf{Tableau} sind etablierte Lösungen mit großem Funktionsumfang und einer breiten Community. Power BI bietet eine tiefe Integration mit Microsoft-Produkten, während Tableau durch flexible Dashboards und zahlreiche Healthcare-Implementierungen überzeugt.
+	\item \textbf{Qlik Sense Healthcare} punktet durch eine native FHIR-Schnittstelle und wurde speziell für den Gesundheitsbereich angepasst.
+	\item \textbf{Grafana}, eine Open-Source-Lösung mit vielen Plugins, eignet sich besonders für Zeitreihenanalysen, ist aber weniger auf komplexe klinische Analysen ausgelegt.
+\end{itemize}Empfohlen werden \textbf{Tableau} oder \textbf{Qlik Sense}, beide mit \textbf{20 von 22 Punkten}, da sie sich sowohl durch Funktionsvielfalt als auch durch klinische Anwendungsbeispiele auszeichnen.
+
+\subsection{Medizinische Datenvisualisierung}
+Zur Darstellung und Analyse medizinischer Bilddaten wurden folgende Lösungen untersucht:
+Philips HealthSuite Imaging ist eine hochverfügbare Unternehmenslösung mit 99,99\% Uptime, jedoch stark an AWS-Cloud-Infrastrukturen gebunden.
+3D Slicer ist eine Open-Source-Plattform mit breiter Community, vielen Erweiterungen und Unterstützung für Windows, Mac und Linux.
+MITK (Medical Imaging Interaction Toolkit) bietet ebenfalls Open-Source-Funktionalität, hat jedoch eine kleinere Community und weniger praxisnahe Erweiterungen.
+3D Slicer erhielt 17 von 29 Punkten und wird aufgrund seiner Community und Erweiterbarkeit empfohlen, obwohl es in Punkto Integration in klinische Abläufe noch optimiert werden muss.
+
+\section{Zusammenfassende Empfehlung}
+Auf Grundlage der Bewertung ergibt sich folgendes bevorzugtes Technologiebündel:
+\begin{itemize}
+	\item \textbf{Datenvirtualisierung:} Infor Cloverleaf – aufgrund der hohen Punktzahl, Spezialisierung auf den Gesundheitsbereich und umfassender Standardunterstützung.
+	\item \textbf{Business Intelligence:} Tableau oder Qlik Sense – dank ihrer leistungsfähigen Dashboard-Funktionen und klinischer Anpassbarkeit.
+	\item \textbf{Medizinische Visualisierung:} 3D Slicer – wegen der offenen Architektur und der großen Entwicklercommunity.
+
+\end{itemize}Die Kompatibilität dieser Lösungen mit der bestehenden Infrastruktur muss jedoch vor der finalen Implementierung überprüft werden, um potenzielle Integrationsrisiken zu vermeiden.

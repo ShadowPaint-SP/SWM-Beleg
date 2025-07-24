@@ -2,7 +2,8 @@
 
 \chapter{Einleitung}
 \label{sec:einleitung}
-Die zunehmende Digitalisierung im Gesundheitswesen eröffnet vielfältige Möglichkeiten zur Effizienzsteigerung, besseren Informationsbereitstellung und verbesserten Patientenversorgung. In medizinischen Einrichtungen ist jedoch häufig eine heterogene IT-Landschaft vorzufinden, in der Dokumente aus verschiedenen Quellen unstrukturiert abgelegt werden. Daraus resultieren Probleme bei der Informationssuche, Prozessineffizienzen sowie eine eingeschränkte Nachnutzung der Dokumentation. Ziel dieses Projekts ist die Planung eines Entity-Recognition- und -Retrieval-Systems (ER-System) zur Strukturierung und Auffindung medizinischer Informationen in Dokumentensystemen. Der Fokus liegt auf der Integration bestehender Systeme, der Reduktion manueller Suchvorgänge sowie der Einhaltung datenschutzrechtlicher Anforderungen.
+Die zunehmende Digitalisierung im Gesundheitswesen eröffnet vielfältige Möglichkeiten zur Effizienzsteigerung, besseren Informationsbereitstellung und verbesserten Patientenversorgung. In medizinischen Einrichtungen ist jedoch häufig eine heterogene IT-Landschaft vorzufinden, in der Dokumente aus verschiedenen Quellen unstrukturiert abgelegt werden. Daraus resultieren Probleme bei der Informationssuche, Prozessineffizienzen sowie eine eingeschränkte Nachnutzung der Dokumentation. 
+Ziel dieses Projekts ist die Planung eines Entity-Recognition- und Retrieval-Systems (ER-System) zur Strukturierung und Auffindung medizinischer Informationen in Dokumentensystemen. Der Fokus liegt auf der Integration bestehender Systeme, der Reduktion manueller Suchvorgänge sowie der Einhaltung datenschutzrechtlicher Anforderungen.
 
 {\let\clearpage\relax
 \chapter{Stakeholder Interviews}}
@@ -37,48 +38,30 @@ Die Klinikdirektion betont darüber hinaus:
 \end{itemize}
 Die Projektumsetzung soll in einem modularen Rollout erfolgen, beginnend mit einem Pilotbetrieb auf einer Station (ca. 100 Patienten).
 \section{Ergebnisse Interview 2: IT-Spezialist und Datenschutzbeauftragter}
-\underline{Aktueller Stand und Technische Rahmenbedingungen}
-Die bestehende IT-Landschaft besteht aus über 40 teilweise proprietären Subsystemen (zentrale Systeme, Sonderanwendungen, Verwaltungswerkzeuge), die auf virtualisierten Maschinen in einem eigenen Rechenzentrum betrieben werden. Es existiert ein ausfallsicheres Backup-System mit redundanter Infrastruktur. Die Nutzung externer Cloud-Services ist untersagt. HL7 und FHIR werden als zentrale Schnittstellenstandards anerkannt.
-Der Datenschutzbeauftragte betont die Einhaltung der DSGVO, insbesondere im Hinblick auf Zweckbindung, Datenminimierung und Zugriffsbeschränkung.
-\underline{Anforderungen und Wünsche}\\
+\underline{Aktueller Stand und technische Rahmenbedingungen}
+Die bestehende IT-Landschaft besteht aus über 40 Subsystemen, betrieben in einem eigenen Rechenzentrum mit redundanter Infrastruktur. Externe Cloud-Nutzung ist ausgeschlossen, HL7 und FHIR sind zentrale Standards.
 \underline{Datenschutz und Sicherheit}
 \begin{itemize}
-	\item Pseudonymisierung und Verschlüsselung sensibler Daten
-	\item keine lokale Speicherung personenbezogener Daten auf mobilen Endgeräten
-	\item differenzierte Rechtevergabe nach Nutzerrolle (RBAC)
-	\item Zwei-Faktor-Authentifizierung (z.B. via TOTP-App)
-	\item umfassende Auditierung aller Zugriffe und Aktionen
-	\item ausschließliche Verarbeitung innerhalb des geschützten Intranets
-	\item Nutzung ausschließlich synthetischer oder pseudonymisierter Snapshots für Tests und Entwicklung
-	\item Kein Zugriff auf Live-Daten ohne gesonderte Genehmigung durch ein Datenschutzgremium
+	\item Strenge DSGVO-konforme Datenverarbeitung (Pseudonymisierung, Verschlüsselung, RBAC, 2FA).
+	\item Verarbeitung ausschließlich im geschützten Intranet, keine lokale Speicherung auf Endgeräten.
+	\item Nutzung pseudonymisierter Testdaten und restriktiver Zugriff auf Live-Daten.
 \end{itemize}
-\underline{Systemintegration und Infrastruktur}
+\underline{Systemintegration und Wartung}
 \begin{itemize}
-	\item Containerisierter Betrieb (Docker, Kubernetes)
-	\item Microservice-Architektur für flexible Skalierbarkeit
-	\item Integration in bestehende IT-Umgebung mit abgestimmten Datenformaten und Übergabeprozessen
-	\item Kein Caching aufgrund alter Bestandssysteme
-	\item Segmentierte Netzwerke, Zugriff IP-basiert
-\end{itemize}
-\underline{Wartung und Support}
-\begin{itemize}
-	\item Wartung durch interne IT, mit Unterstützung durch externe Partner bei Entwicklung und Updates (jedoch ohne direkten Infrastrukturzugriff),
-	\item dedizierte Update-Fenster (z.B. mittwochs) und ein internes Ticket-System für Fehlerbehandlung,
-	\item Entwicklung auf einem separaten, virtuellen Testsystem zur Sicherung des laufenden Betriebs.
+	\item Containerisierte Microservice-Architektur (Docker, Kubernetes) und abgestimmte Schnittstellen.
+	\item Wartung und Updates durch interne IT, unterstützt durch externe Partner ohne direkten Infrastrukturzugriff.
 \end{itemize}
 \underline{Leistungsanforderungen und Skalierung}
 \begin{itemize}
-	\item Unterstützung von bis zu 50 parallelen Nutzern im Pilotbetrieb, langfristig mehreren Hundert
-	\item Antwortzeiten < 3 Sekunden für Standardabfragen
-	\item Komplexe Analysen mit akzeptierten Antwortzeiten von wenigen Minuten
-	\item Nutzung von Hochleistungssystemen mit dedizierten GPUs
-	\item Absicherung kritischer Engpässe durch priorisierte Hardware-Ressourcen
+	\item Unterstützung von 50 Nutzern im Pilotbetrieb, später mehrere Hundert.
+	\item Antwortzeiten <3 Sekunden für Standardabfragen, komplexe Analysen in wenigen Minuten.
+	\item Einsatz leistungsstarker Hardware mit priorisierten Ressourcen.
 \end{itemize}
 \underline{Zeitrahmen}
 \begin{itemize}
 	\item Projektlaufzeit: 3 Jahre
-	\item Nachweis funktionaler Prototypen innerhalb von 1,5 Jahren
-	\item Abnahmetest: 3-monatige störungsfreie Betriebsphase zum Projektende
+	\item funktionale Prototypen nach 1,5 Jahren
+	\item abschließender 3-monatiger Testbetrieb.
 \end{itemize}
 \section{Bewertung und Nutzen für das Projekt}
 Die Stakeholderinterviews ermöglichten ein tiefes Verständnis der bestehenden Schwachstellen, Prioritäten und Erwartungen. Die Kombination aus medizinischer, technischer und datenschutzrechtlicher Perspektive erlaubt eine differenzierte Anforderungsanalyse.
